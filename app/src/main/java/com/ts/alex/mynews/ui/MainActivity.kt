@@ -1,6 +1,6 @@
-package com.ts.alex.mynews
+package com.ts.alex.mynews.ui
 
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import com.ts.alex.mynews.R
 
 class MainActivity : AppCompatActivity(R.layout.activity_main)

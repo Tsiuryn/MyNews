@@ -1,0 +1,169 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "2:5741410946527359183",
+      "lastPropertyId": "8:2123848504971254988",
+      "name": "ArticleDB",
+      "properties": [
+        {
+          "id": "1:7581127829178103066",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3258844276873690073",
+          "name": "author",
+          "type": 9
+        },
+        {
+          "id": "3:1865994237085378408",
+          "name": "content",
+          "type": 9
+        },
+        {
+          "id": "4:4397118976065518517",
+          "name": "description",
+          "type": 9
+        },
+        {
+          "id": "5:8080790194482428159",
+          "name": "publishedAt",
+          "type": 9
+        },
+        {
+          "id": "6:5073068661214382692",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "7:5283984960561947734",
+          "name": "url",
+          "type": 9
+        },
+        {
+          "id": "8:2123848504971254988",
+          "name": "urlToImage",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:7036559179781489876",
+      "lastPropertyId": "3:2681352911543514859",
+      "name": "FrenchDBEntity",
+      "properties": [
+        {
+          "id": "1:733031382186654859",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5153581748607032329",
+          "name": "status",
+          "type": 9
+        },
+        {
+          "id": "3:2681352911543514859",
+          "name": "totalResults",
+          "type": 5,
+          "flags": 4
+        }
+      ],
+      "relations": [
+        {
+          "id": "1:8528917128370513342",
+          "name": "articles",
+          "targetId": "2:5741410946527359183"
+        }
+      ]
+    },
+    {
+      "id": "5:8870960847830498307",
+      "lastPropertyId": "3:1047194862495288000",
+      "name": "RussianDBEntity",
+      "properties": [
+        {
+          "id": "1:597357184696239325",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8464852848532261528",
+          "name": "status",
+          "type": 9
+        },
+        {
+          "id": "3:1047194862495288000",
+          "name": "totalResults",
+          "type": 5,
+          "flags": 4
+        }
+      ],
+      "relations": [
+        {
+          "id": "2:8511979616456469004",
+          "name": "articles",
+          "targetId": "2:5741410946527359183"
+        }
+      ]
+    },
+    {
+      "id": "6:6867236049301874011",
+      "lastPropertyId": "3:1695217696511584328",
+      "name": "AmericanDBEntity",
+      "properties": [
+        {
+          "id": "1:184764577374645527",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4252001427340967765",
+          "name": "status",
+          "type": 9
+        },
+        {
+          "id": "3:1695217696511584328",
+          "name": "totalResults",
+          "type": 5,
+          "flags": 4
+        }
+      ],
+      "relations": [
+        {
+          "id": "3:8117480553338880537",
+          "name": "articles",
+          "targetId": "2:5741410946527359183"
+        }
+      ]
+    }
+  ],
+  "lastEntityId": "6:6867236049301874011",
+  "lastIndexId": "0:0",
+  "lastRelationId": "3:8117480553338880537",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [
+    215014093500415623,
+    7823642883193325956
+  ],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    2560010801890868284,
+    2051547867842933609,
+    2658651330282654233,
+    3295361308615093189,
+    8827206150292788582
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

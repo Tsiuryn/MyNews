@@ -13,4 +13,20 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_news</item>
+    </style>
+
+    <style name="MainScreenFlags">
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">@drawable/ripple_effect</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="ThemeOverlay.MyNews.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
+    </style>
 </resources>
+
