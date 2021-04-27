@@ -9,6 +9,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.ts.alex.mynews.databinding.FragmentMainBinding
 import com.ts.alex.mynews.ui.MainViewModel
+import com.ts.alex.mynews.ui.dialogs.MenuDialog
 import com.ts.alex.mynews.ui.util.CountryDomain
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -39,6 +40,7 @@ class MainFragment : Fragment(), View.OnClickListener {
         binding.vFrance.setOnClickListener(this)
         binding.vRussia.setOnClickListener(this)
         binding.vUSA.setOnClickListener(this)
+        binding.vMenu.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -57,6 +59,9 @@ class MainFragment : Fragment(), View.OnClickListener {
                 val action =
                     MainFragmentDirections.actionMainFragmentToListNewsFragment(CountryDomain.USA)
                 navController.navigate(action)
+            }
+            binding.vMenu ->{
+                MenuDialog().show(requireActivity().supportFragmentManager, "Menu_Dialog")
             }
         }
     }

@@ -6,11 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".ui.screens.MainFragment">
 
+    <ImageView
+        android:id="@+id/vMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/vTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="@string/main_screen_title"
@@ -18,7 +28,7 @@
         android:textSize="@dimen/title_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/vMenu" />
 
     <ScrollView
         android:layout_width="match_parent"

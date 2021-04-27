@@ -1,0 +1,166 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:7760260285479265897",
+      "lastPropertyId": "4:413993460513037979",
+      "name": "DBEntity",
+      "properties": [
+        {
+          "id": "1:6275081991946822711",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2058113265958253633",
+          "name": "typeDB",
+          "type": 5,
+          "flags": 2
+        },
+        {
+          "id": "3:1316893687814935977",
+          "name": "status",
+          "type": 9
+        },
+        {
+          "id": "4:413993460513037979",
+          "name": "totalResults",
+          "type": 5,
+          "flags": 2
+        }
+      ],
+      "relations": [
+        {
+          "id": "1:5577414423391083921",
+          "name": "articles",
+          "targetId": "2:3235263097440068622"
+        }
+      ]
+    },
+    {
+      "id": "2:3235263097440068622",
+      "lastPropertyId": "8:8428866243786874593",
+      "name": "ArticleDB",
+      "properties": [
+        {
+          "id": "1:5821306546485980381",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1730262904774258181",
+          "name": "author",
+          "type": 9
+        },
+        {
+          "id": "3:2775947391826225366",
+          "name": "content",
+          "type": 9
+        },
+        {
+          "id": "4:1642906726710636744",
+          "name": "description",
+          "type": 9
+        },
+        {
+          "id": "5:1672614079242757085",
+          "name": "publishedAt",
+          "type": 9
+        },
+        {
+          "id": "6:4521649815164403890",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "7:3295480431818611331",
+          "name": "url",
+          "type": 9
+        },
+        {
+          "id": "8:8428866243786874593",
+          "name": "urlToImage",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:9080544670354982337",
+      "lastPropertyId": "3:7278532940438456108",
+      "name": "RussianDBEntity",
+      "properties": [
+        {
+          "id": "1:922901824956156549",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:504809818328695568",
+          "name": "status",
+          "type": 9
+        },
+        {
+          "id": "3:7278532940438456108",
+          "name": "totalResults",
+          "type": 5,
+          "flags": 4
+        }
+      ],
+      "relations": [
+        {
+          "id": "2:1849874558846135221",
+          "name": "articles",
+          "targetId": "2:3235263097440068622"
+        }
+      ]
+    },
+    {
+      "id": "4:7323015815602050315",
+      "lastPropertyId": "3:1219777015155079913",
+      "name": "AmericanDBEntity",
+      "properties": [
+        {
+          "id": "1:4509767927480249784",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2646372823415085553",
+          "name": "status",
+          "type": 9
+        },
+        {
+          "id": "3:1219777015155079913",
+          "name": "totalResults",
+          "type": 5,
+          "flags": 4
+        }
+      ],
+      "relations": [
+        {
+          "id": "3:3458254505406085485",
+          "name": "articles",
+          "targetId": "2:3235263097440068622"
+        }
+      ]
+    }
+  ],
+  "lastEntityId": "4:7323015815602050315",
+  "lastIndexId": "0:0",
+  "lastRelationId": "3:3458254505406085485",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/vUpdater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:text="@string/dialog_menu_title"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/vSwitch"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/vSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/vUpdater"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/vUpdater"
+        app:layout_constraintTop_toTopOf="@+id/vUpdater"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/vTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="@string/dialog_menu_title"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/title_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vUpdater" />
+
+    <TimePicker
+        android:id="@+id/vPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vTitle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/vSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#545B5E"
+        android:visibility="gone"
+        android:text="@string/dialog_menu_save"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/vPicker"
+        app:layout_constraintTop_toBottomOf="@+id/vPicker" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

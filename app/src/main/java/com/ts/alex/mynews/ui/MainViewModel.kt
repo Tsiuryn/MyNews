@@ -9,13 +9,15 @@ import com.ts.alex.mynews.domain.entity.news.Article
 import com.ts.alex.mynews.domain.entity.news.News
 import com.ts.alex.mynews.domain.usecase.IDBUseCase
 import com.ts.alex.mynews.domain.usecase.IGetNewsUseCase
+import com.ts.alex.mynews.domain.usecase.ISharedPreferencesUseCase
 import com.ts.alex.mynews.ui.util.CountryDomain
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
 class MainViewModel(
     private val getNews: IGetNewsUseCase,
-    private val db: IDBUseCase
+    private val db: IDBUseCase,
+    private val preferences: ISharedPreferencesUseCase
 ) : ViewModel() {
 
     private var article: Article? = null
@@ -29,6 +31,10 @@ class MainViewModel(
     private var _error = MutableLiveData<String>()
     val error: LiveData<String>
         get() = _error
+
+    private var _updateNews = MutableLiveData<Pair<Long, Boolean>>()
+    val updateNews: LiveData<Pair<Long, Boolean>>
+        get() = _updateNews
 
     fun getNewsByCountry(domain: CountryDomain) {
         viewModelScope.launch {
@@ -84,5 +90,19 @@ class MainViewModel(
     fun cleanListArticle(){
         _newsByCountry.value = null
     }
+
+    fun updateNews(mlsTime: Long){
+        preferences.setUpdateNews(isUpdate = true)
+        preferences.setUpdateTime(mlsTime)
+        _updateNews.value = preferences.updateTime()  to preferences.isUpdateNews()
+    }
+
+    fun cancelUpdateNews(){
+        preferences.setUpdateNews(isUpdate = false)
+        _updateNews.value = preferences.updateTime() to preferences.isUpdateNews()
+    }
+
+    fun isUpdateNews() = preferences.isUpdateNews()
+
 
 }
