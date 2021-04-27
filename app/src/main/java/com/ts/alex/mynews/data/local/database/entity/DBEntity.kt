@@ -6,14 +6,14 @@ import com.ts.alex.mynews.domain.entity.news.News
 import io.objectbox.annotation.Entity
 import io.objectbox.annotation.Id
 import io.objectbox.relation.ToMany
-import io.objectbox.relation.ToOne
 
 @Entity
-data class FrenchDBEntity(
+data class DBEntity(
     @Id
     var id: Long = 0,
 
 
+    var typeDB: Int? = null,
 
     val status: String? = null,
 
@@ -22,8 +22,8 @@ data class FrenchDBEntity(
      lateinit var articles: ToMany<ArticleDB>
 }
 
-internal fun News.convertToFrenchDB(): FrenchDBEntity{
-    val entity = FrenchDBEntity(
+internal fun News.convertToFrenchDB(): DBEntity{
+    val entity = DBEntity(
         status = this.status,
         totalResults = this.totalResults
     )

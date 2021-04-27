@@ -1,15 +1,13 @@
 package com.ts.alex.mynews.ui
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ts.alex.mynews.data.local.database.entity.convertToFrenchDB
-import com.ts.alex.mynews.data.local.database.entity.models.convertToArticle
+import com.ts.alex.mynews.data.local.database.TypeDataBase
 import com.ts.alex.mynews.domain.entity.news.Article
 import com.ts.alex.mynews.domain.entity.news.News
-import com.ts.alex.mynews.domain.usecase.IFrenchDBUseCase
+import com.ts.alex.mynews.domain.usecase.IDBUseCase
 import com.ts.alex.mynews.domain.usecase.IGetNewsUseCase
 import com.ts.alex.mynews.ui.util.CountryDomain
 import kotlinx.coroutines.launch
@@ -17,7 +15,7 @@ import java.lang.Exception
 
 class MainViewModel(
     private val getNews: IGetNewsUseCase,
-    private val frenchDB: IFrenchDBUseCase
+    private val db: IDBUseCase
 ) : ViewModel() {
 
     private var article: Article? = null
@@ -47,8 +45,16 @@ class MainViewModel(
     private fun updateDB(domain: CountryDomain, news: News) {
         when(domain){
             CountryDomain.FRANCE ->{
-                frenchDB.removeAllData()
-                frenchDB.addAll(news)
+                db.removeAllData(TypeDataBase.FRENCH_DATABASE)
+                db.addAll(news, TypeDataBase.FRENCH_DATABASE)
+            }
+            CountryDomain.RUSSIA ->{
+                db.removeAllData(TypeDataBase.RUSSIAN_DATABASE)
+                db.addAll(news, TypeDataBase.RUSSIAN_DATABASE)
+            }
+            CountryDomain.USA ->{
+                db.removeAllData(TypeDataBase.USA_DATABASE)
+                db.addAll(news, TypeDataBase.USA_DATABASE)
             }
         }
     }
@@ -63,8 +69,13 @@ class MainViewModel(
         try {
             when(countryDomain){
                 CountryDomain.FRANCE ->{
-                    _newsByCountry.value = frenchDB.getAllData()
-
+                    _newsByCountry.value = db.getAllData(TypeDataBase.FRENCH_DATABASE)
+                }
+                CountryDomain.RUSSIA ->{
+                    _newsByCountry.value = db.getAllData(TypeDataBase.RUSSIAN_DATABASE)
+                }
+                CountryDomain.USA ->{
+                    _newsByCountry.value = db.getAllData(TypeDataBase.USA_DATABASE)
                 }
             }
         }catch (e: Exception){}

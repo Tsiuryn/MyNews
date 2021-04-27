@@ -46,16 +46,14 @@ class ListNewsFragment : Fragment() {
         if(isNetworkAvailable(requireContext())){
             viewModel.getNewsByCountry(args.countryDomain)
         }else{
-            Log.d("TAG11", "onViewCreated: sdlkfjlksdjflksdjlfjsdf")
             viewModel.getNewsFromDB(args.countryDomain)
         }
-
     }
 
     private fun observe() {
         viewModel.apply {
             newsByCountry.observe({ lifecycle }, { listArticles ->
-                if(listArticles != null){
+                if (listArticles != null && listArticles.isNotEmpty()) {
                     setUpRecycler(listArticles)
                 }
             })
