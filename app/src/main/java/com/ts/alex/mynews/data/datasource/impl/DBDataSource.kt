@@ -22,7 +22,6 @@ class DBDataSource: IDBDataSource {
                 getDataBase().remove(it)
             }
         }
-
     }
 
     override fun addAll(entity: DBEntity) {

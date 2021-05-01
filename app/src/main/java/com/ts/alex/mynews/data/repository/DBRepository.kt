@@ -2,7 +2,7 @@ package com.ts.alex.mynews.data.repository
 
 import com.ts.alex.mynews.data.datasource.IDBDataSource
 import com.ts.alex.mynews.data.local.database.TypeDataBase
-import com.ts.alex.mynews.data.local.database.entity.convertToFrenchDB
+import com.ts.alex.mynews.data.local.database.entity.convertToDBEntity
 import com.ts.alex.mynews.data.local.database.entity.models.convertToArticle
 import com.ts.alex.mynews.domain.entity.news.Article
 import com.ts.alex.mynews.domain.entity.news.News
@@ -22,7 +22,7 @@ class DBRepository(val source: IDBDataSource) : IDBUseCase {
     }
 
     override fun addAll(entity: News, typeDataBase: TypeDataBase) {
-        val db = entity.convertToFrenchDB()
+        val db = entity.convertToDBEntity()
         db.typeDB = typeDataBase.value
         source.addAll(db)
     }

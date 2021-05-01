@@ -30,8 +30,5 @@ class WebViewFragment : Fragment() {
         val web = binding.vWebView
         web.settings.javaScriptEnabled = true
         web.loadUrl(args.url)
-
-
     }
-
 }

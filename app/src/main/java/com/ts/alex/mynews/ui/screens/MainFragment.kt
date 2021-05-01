@@ -19,7 +19,6 @@ class MainFragment : Fragment(), View.OnClickListener {
     private lateinit var navController: NavController
     private val viewModel by sharedViewModel<MainViewModel> ()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
