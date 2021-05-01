@@ -10,15 +10,13 @@
         android:id="@+id/vUpdater"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:layout_margin="8dp"
-        android:text="@string/dialog_menu_title"
+        android:text="@string/dialog_menu_switch"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/vSwitch"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

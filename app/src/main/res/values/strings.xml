@@ -6,6 +6,7 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
+    <string name="dialog_menu_switch">Update news:</string>
     <string name="dialog_menu_title">Update news every:</string>
     <string name="dialog_menu_save">Save</string>
 </resources>

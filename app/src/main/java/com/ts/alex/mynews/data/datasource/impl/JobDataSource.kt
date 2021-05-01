@@ -25,6 +25,7 @@ class JobDataSource(private val context: Context) : IJobDataSource {
                 flexTimeInterval = flexTime,
                 TimeUnit.MILLISECONDS)
                 .setConstraints(constraints)
+                .addTag(WORK_NAME)
                 .build()
 
 
@@ -32,6 +33,6 @@ class JobDataSource(private val context: Context) : IJobDataSource {
     }
 
     override fun cancelJob() {
-        WorkManager.getInstance(context).cancelAllWorkByTag(WORK_NAME);
+        WorkManager.getInstance(context).cancelAllWorkByTag(WORK_NAME)
     }
 }
