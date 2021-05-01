@@ -34,6 +34,7 @@ class MenuDialog: DialogFragment() {
         }
         binding.vSave.setOnClickListener{
             viewModel.updateNews(changedTime)
+            dismiss()
         }
         binding.vSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
             visibility(show = isChecked)

@@ -7,8 +7,8 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
 fun providePlaceHolderApi(): RestApi {
-    // HttpLoggingInterceptor - для отображения в логов
     val logging = HttpLoggingInterceptor()
     logging.level = HttpLoggingInterceptor.Level.BODY
     val client = OkHttpClient.Builder()

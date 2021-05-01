@@ -1,5 +1,6 @@
 package com.ts.alex.mynews.ui
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,6 +10,7 @@ import com.ts.alex.mynews.domain.entity.news.Article
 import com.ts.alex.mynews.domain.entity.news.News
 import com.ts.alex.mynews.domain.usecase.IDBUseCase
 import com.ts.alex.mynews.domain.usecase.IGetNewsUseCase
+import com.ts.alex.mynews.domain.usecase.IJobUseCase
 import com.ts.alex.mynews.domain.usecase.ISharedPreferencesUseCase
 import com.ts.alex.mynews.ui.util.CountryDomain
 import kotlinx.coroutines.launch
@@ -17,7 +19,8 @@ import java.lang.Exception
 class MainViewModel(
     private val getNews: IGetNewsUseCase,
     private val db: IDBUseCase,
-    private val preferences: ISharedPreferencesUseCase
+    private val preferences: ISharedPreferencesUseCase,
+    private val job: IJobUseCase
 ) : ViewModel() {
 
     private var article: Article? = null
@@ -74,7 +77,8 @@ class MainViewModel(
     fun getNewsFromDB(countryDomain: CountryDomain) {
         try {
             when(countryDomain){
-                CountryDomain.FRANCE ->{
+                CountryDomain.FRANCE -> {
+                    Log.d("TAG11", "getNewsFromDB: get Data From DB")
                     _newsByCountry.value = db.getAllData(TypeDataBase.FRENCH_DATABASE)
                 }
                 CountryDomain.RUSSIA ->{
@@ -104,5 +108,13 @@ class MainViewModel(
 
     fun isUpdateNews() = preferences.isUpdateNews()
 
+    fun startJob(){
+        if(preferences.isUpdateNews()){
+            job.startJob(preferences.updateTime())
+        }
+    }
 
+    fun cancelJob(){
+        job.cancelJob()
+    }
 }

@@ -22,7 +22,7 @@ data class DBEntity(
      lateinit var articles: ToMany<ArticleDB>
 }
 
-internal fun News.convertToFrenchDB(): DBEntity{
+internal fun News.convertToDBEntity(): DBEntity{
     val entity = DBEntity(
         status = this.status,
         totalResults = this.totalResults
